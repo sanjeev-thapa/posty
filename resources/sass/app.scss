@@ -1,0 +1,49 @@
+// Fonts
+// @import url('https://fonts.googleapis.com/css?family=Nunito');
+// @import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap');
+
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+// $font-family-sans-serif: 'Manjari',
+// sans-serif;
+
+// Theme Colors
+$theme-colors: ("primary": #3c8cd8, "danger": #c0787c);
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.border-2 {
+    border: 2px solid #ced4da;
+}
+
+.focus-primary:focus {
+    border-color: $primary;
+    box-shadow: none !important;
+}
+
+.focus-danger:focus {
+    border-color: $danger;
+    box-shadow: none !important;
+}
+
+.w-75-lg {
+    width: 100%;
+}
+
+.w-50-lg {
+    width: 100%;
+}
+
+@include media-breakpoint-up(lg) {
+    .w-75-lg {
+        width: 75%;
+    }
+
+    .w-50-lg {
+        width: 50%;
+    }
+
+}
