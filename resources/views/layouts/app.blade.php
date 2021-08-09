@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Dashboard</a>
+                        <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Posts</a>
@@ -29,18 +29,23 @@
                 </ul>
 
                 <ul class="navbar-nav ml-auto">
+                    @auth
                     <li class="nav-item active">
                         <a class="nav-link" href="#">John Doe</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Logout</a>
                     </li>
+                    @endauth
+
+                    @guest
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Login</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Register</a>
+                        <a class="nav-link" href="{{ route('register') }}">Register</a>
                     </li>
+                    @endguest
                 </ul>
             </div>
         </div>
