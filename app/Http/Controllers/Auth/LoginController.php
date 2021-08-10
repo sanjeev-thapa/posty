@@ -18,7 +18,7 @@ class LoginController extends Controller
 
     public function login(LoginRequest $request){
         return auth()->attempt($request->only('username', 'password'), $request->remember)
-        ? redirect()->route('dashboard')
+        ? redirect()->intended()
         : back()->with('status', 'Invalid Login Details');
     }
 }
