@@ -33,9 +33,12 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="#">John Doe</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Logout</a>
-                    </li>
+                    <form action="{{ route('logout') }}" class="d-inline" method="post">
+                        @csrf
+                        <li class="nav-item active">
+                            <button class="btn border-0 nav-link">Logout</button>
+                        </li>
+                    </form>
                     @endauth
 
                     @guest
