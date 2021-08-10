@@ -10023,6 +10023,14 @@ h3 {
   width: 100%;
 }
 
+.font-90 {
+  font-size: 90%;
+}
+
+.btn:focus {
+  box-shadow: none !important;
+}
+
 @media (min-width: 992px) {
   .w-75-lg {
     width: 75%;

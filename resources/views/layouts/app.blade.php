@@ -24,7 +24,7 @@
                         <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Posts</a>
+                        <a class="nav-link" href="{{ route('posts.index') }}">Posts</a>
                     </li>
                 </ul>
 
