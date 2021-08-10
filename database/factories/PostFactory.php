@@ -22,7 +22,8 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'body' => $this->faker->sentence(),
+            'user_id' => $this->faker->randomElement(\App\Models\User::pluck('id')),
         ];
     }
 }
