@@ -37,6 +37,10 @@ $theme-colors: ("primary": #3c8cd8, "danger": #c0787c);
     width: 100%;
 }
 
+.w-25-lg {
+    width: 100%;
+}
+
 .font-90 {
     font-size: 90%;
 }
@@ -52,6 +56,10 @@ $theme-colors: ("primary": #3c8cd8, "danger": #c0787c);
 
     .w-50-lg {
         width: 50%;
+    }
+
+    .w-25-lg {
+        width: 25%;
     }
 
 }
