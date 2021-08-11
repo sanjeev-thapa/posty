@@ -9,7 +9,7 @@
 
         <div class="form-group">
             <textarea class="form-control bg-light border-2 focus-primary py-2 @error('body') is-invalid @enderror"
-                placeholder="Post Something..." rows="5" name="body"></textarea>
+                placeholder="Post Something..." rows="5" name="body">{{ old('body') }}</textarea>
             @error('body') <p class="text-danger m-0 font-90"> {{ $message }} </p> @enderror
         </div>
 
