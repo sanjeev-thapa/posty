@@ -9,6 +9,10 @@
 
     @guest
     <p class="m-0">Hello Guest!</p>
+    <div class="d-flex mt-2">
+        <a href="{{ route('login') }}" class="btn btn-primary mr-2">Login</a>
+        <a href="{{ route('register') }}" class="btn btn-primary">Register</a>
+    </div>
     @endguest
 </div>
 @endsection
