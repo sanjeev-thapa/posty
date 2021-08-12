@@ -10035,6 +10035,10 @@ h3 {
   box-shadow: none !important;
 }
 
+ul.pagination {
+  flex-wrap: wrap;
+}
+
 @media (min-width: 992px) {
   .w-75-lg {
     width: 75%;

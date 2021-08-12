@@ -49,6 +49,10 @@ $theme-colors: ("primary": #3c8cd8, "danger": #c0787c);
     box-shadow: none !important;
 }
 
+ul.pagination {
+    flex-wrap: wrap;
+}
+
 @include media-breakpoint-up(lg) {
     .w-75-lg {
         width: 75%;
