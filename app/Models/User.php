@@ -47,7 +47,11 @@ class User extends Authenticatable
     }
 
     public function likes(){
-        return $this->belongsToMany(User::class, 'likes');
+        return $this->belongsToMany(User::class, 'likes')->whereNull(['deleted_at'])->withPivot(['deleted_at']);
+    }
+
+    public function likesWithTrashed(){
+        return $this->belongsToMany(User::class, 'likes')->withPivot(['deleted_at']);
     }
 
     public function setPasswordAttribute($password){

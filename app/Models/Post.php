@@ -18,7 +18,11 @@ class Post extends Model
     }
 
     public function likedBy(){
-        return $this->belongsToMany(User::class, 'likes');
+        return $this->belongsToMany(User::class, 'likes')->whereNull(['deleted_at'])->withPivot(['deleted_at']);
+    }
+
+    public function likedByWithTrashed(){
+        return $this->belongsToMany(User::class, 'likes')->withPivot(['deleted_at']);
     }
 
     public function isLikedBy(User $user){
