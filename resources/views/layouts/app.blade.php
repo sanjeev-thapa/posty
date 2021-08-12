@@ -31,7 +31,7 @@
                 <ul class="navbar-nav ml-auto">
                     @auth
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">John Doe</a>
+                        <a class="nav-link">{{ auth()->user()->name }}</a>
                     </li>
                     <form action="{{ route('logout') }}" class="d-inline" method="post">
                         @csrf
