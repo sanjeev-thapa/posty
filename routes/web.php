@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\LikeController;
 
 
 // Authentication
@@ -22,3 +23,7 @@ Route::view('dashboard', 'dashboard')->middleware('auth')->name('dashboard');
 Route::get('posts', [PostController::class, 'index'])->name('posts.index');
 Route::post('posts', [PostController::class, 'store'])->name('posts.store');
 Route::delete('posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+
+// Like
+Route::post('likes/{post}', [LikeController::class, 'store'])->name('likes.store');
+Route::delete('likes/{post}', [LikeController::class, 'destroy'])->name('likes.destroy');

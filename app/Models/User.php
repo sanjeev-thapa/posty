@@ -46,6 +46,10 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
+    public function likes(){
+        return $this->belongsToMany(User::class, 'likes');
+    }
+
     public function setPasswordAttribute($password){
         $this->attributes['password'] = \Hash::make($password);
     }
