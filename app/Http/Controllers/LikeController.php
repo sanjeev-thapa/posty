@@ -32,6 +32,7 @@ class LikeController extends Controller
      */
     public function destroy(Post $post)
     {
+        return $post->likedByWithTrashed;
         abort_if(!$post->isLikedBy(auth()->user()), 403);
         // $post->likedBy()->detach(auth()->user()->id);
         $post->likedBy->find(auth()->user())->pivot->update(['deleted_at' => now()]);

@@ -47,11 +47,11 @@ class User extends Authenticatable
     }
 
     public function likes(){
-        return $this->belongsToMany(Post::class, 'likes')->whereNull(['deleted_at'])->withPivot(['deleted_at']);
+        return $this->belongsToMany(Post::class, 'likes')->withTimestamps()->whereNull(['deleted_at'])->withPivot(['deleted_at']);
     }
 
     public function likesWithTrashed(){
-        return $this->belongsToMany(Post::class, 'likes')->withPivot(['deleted_at']);
+        return $this->belongsToMany(Post::class, 'likes')->withTimestamps()->withPivot(['deleted_at']);
     }
 
     public function setPasswordAttribute($password){
