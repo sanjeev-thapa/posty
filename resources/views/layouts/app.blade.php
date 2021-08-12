@@ -58,7 +58,7 @@
         @yield('content')
     </div>
 
-    <link rel="stylesheet" href="{{ asset('js/app.js') }}">
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>
