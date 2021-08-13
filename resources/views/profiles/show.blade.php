@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="w-75-lg px-4 mx-auto mt-4">
-    <h3>John Doe</h3>
+    <h3>{{ $user->name }}</h3>
     <p>Posted {{ $posts->count() }} {{ Str::plural('post', $posts->count()) }} and recieved
         {{ $likesCount = $user->recievedLikesCount() }} {{ Str::plural('like', $likesCount) }}.</p>
 </div>
