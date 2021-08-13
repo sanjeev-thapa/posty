@@ -1,7 +1,8 @@
 @props(['post' => $post])
 
 <div class="mt-3">
-    <strong>{{ Str::title($post->user->name) }}</strong>
+    <a href="{{ route('profiles.show', $post->user) }}"
+        class="font-weight-bold text-decoration-none text-dark">{{ Str::title($post->user->name) }}</a>
     <span class="text-muted small font-weight-bold mb-0 ml-1">{{ $post->created_at->diffForHumans() }}</span>
     <p class="mb-0">{{ $post->body }}</p>
     <div class="d-flex align-items-end">
