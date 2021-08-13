@@ -23,7 +23,7 @@ class LikeController extends Controller
     {
         abort_if($post->isLikedBy(auth()->user()), 403);
         if(!$post->likedByWithTrashed()->where('user_id', auth()->user()->id)->count()){
-            Mail::to($post->user->email)->send(new LikeMail(auth()->user()));
+            Mail::to($post->user->email)->send(new LikeMail(auth()->user(), $post));
         }
         $post->likedBy()->attach(auth()->user()->id);
         return back();
