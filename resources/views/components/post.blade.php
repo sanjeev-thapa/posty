@@ -1,7 +1,7 @@
 @props(['post' => $post])
 
 <div class="mt-3">
-    <strong>{{ $post->user->name }}</strong>
+    <strong>{{ Str::title($post->user->name) }}</strong>
     <span class="text-muted small font-weight-bold mb-0 ml-1">{{ $post->created_at->diffForHumans() }}</span>
     <p class="mb-0">{{ $post->body }}</p>
     <div class="d-flex align-items-end">
@@ -29,7 +29,7 @@
         </form>
         @endcan
 
-        <p class="my-0">{{ $post->likedBy->count() }} Likes</p>
+        <p class="my-0">{{ $post->likedBy->count() }} {{ Str::plural('Like', $post->likedBy->count()) }}</p>
 
     </div>
 </div>
