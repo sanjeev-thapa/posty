@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\ProfileController;
 
 
 // Authentication
@@ -20,3 +21,6 @@ Route::delete('posts/{post}', [PostController::class, 'destroy'])->name('posts.d
 // Like
 Route::post('likes/{post}', [LikeController::class, 'store'])->name('likes.store');
 Route::delete('likes/{post}', [LikeController::class, 'destroy'])->name('likes.destroy');
+
+// Profile
+Route::get('profiles/{user}', [ProfileController::class, 'show'])->name('profiles.show');

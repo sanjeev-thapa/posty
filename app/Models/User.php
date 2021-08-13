@@ -54,6 +54,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Post::class, 'likes')->withTimestamps()->withPivot(['deleted_at']);
     }
 
+    public function recievedLikesCount(){
+        $postId = $this->posts->pluck('id');
+        return \DB::table('likes')->whereIn('post_id', $postId)->whereNull(['deleted_at'])->count();
+    }
+
     public function setPasswordAttribute($password){
         $this->attributes['password'] = \Hash::make($password);
     }
