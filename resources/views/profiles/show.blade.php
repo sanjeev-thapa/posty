@@ -10,6 +10,7 @@
         {{ $likesCount = $user->recievedLikesCount() }} {{ Str::plural('like', $likesCount) }}.</p>
 </div>
 
+@if($user->posts->count() > 0)
 <div class="w-75-lg bg-white px-4 pb-2 border mx-auto mt-4 rounded">
 
     <div class="mt-4 mb-3">
@@ -24,4 +25,6 @@
     </div>
     @endif
 </div>
+@endif
+
 @endsection
